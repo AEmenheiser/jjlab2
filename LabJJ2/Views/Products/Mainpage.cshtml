@@ -1,0 +1,74 @@
+﻿
+@{
+    /**/
+
+    ViewBag.Title = "Mainpage";
+}
+
+
+@model LabJJ2.Models.ProductsClass
+@Styles.Render("~/Content/Site")
+
+<style>
+    .error {
+        color: red;
+    }
+</style>
+<h2>Additonal</h2>
+@using (Html.BeginForm("Edit", "Products", FormMethod.Post))
+
+
+{
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h3>Name </h3>
+
+                @Html.ValueFor(x => x.Name)
+                @Html.TextBoxFor(x => x.Name)
+                @Html.ValidationMessageFor(x => x.Name, "", new { @class = "error" })
+
+                <p></p>
+                <p>Enter Your Age</p>
+            </div>
+            <div class="col-sm-4">
+                <h3>Description</h3>
+                @Html.ValueFor(x => x.Description)
+                @Html.TextBoxFor(x => x.Description)
+                @Html.ValidationMessageFor(x => x.Description, "", new { @class = "error" })
+
+                <p></p>
+                <p>Enter A Brief Description Please</p>
+            </div>
+            <div class="col-sm-4">
+                <h3>Price </h3>
+                @Html.ValueFor(x => x.Price)
+                @Html.TextBoxFor(x => x.Price)
+                @Html.ValidationMessageFor(x => x.Price, "", new { @class = "error" })
+
+
+                <p>Please Enter a Price</p>
+                <p class="center">Be Honest...</p>
+
+            </div>
+            <div class="col-sm-4">
+                <h3>Weight </h3>
+                @Html.ValueFor(x => x.Weight)
+                @Html.TextBoxFor(x => x.Weight)
+                @Html.ValidationMessageFor(x => x.Weight, "", new { @class = "error" })
+
+
+                <p>Enter Weight in Kg</p>
+
+
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="col-lg-4">Submit</button>
+
+}
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")}
+

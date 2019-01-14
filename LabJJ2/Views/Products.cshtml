@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "Products";
+}
+
+@model LabJJ2.Models.ProductsClass
+@Styles.Render("~/Content/Site")
+
+@DateTime.Now.ToString();
+<h2>Additonal</h2>
+@using (Html.BeginForm("Edit", "Products", FormMethod.Post))
+{
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-1">
+                <h3>Name </h3>
+
+                @Html.ValueFor(x => x.Name)
+                @Html.TextBoxFor(x => x.Name)
+                @Html.ValidationMessageFor(x => x.Name)
+
+                <p></p>
+                <p>Enter Your Age</p>
+            </div>
+            <div class="col-sm-1">
+                <h3>Description</h3>
+                @Html.ValueFor(x => x.Description)
+                @Html.TextBoxFor(x => x.Description)
+
+                <p></p>
+                <p>Enter A Brief Description Please</p>
+            </div>
+            <div class="col-sm-1">
+                <h3>Price </h3>
+                @Html.ValueFor(x => x.Price)
+                @Html.TextBoxFor(x => x.Price)
+
+
+                <p>Please Enter a Price</p>
+                <p class="center">Be Honest...</p>
+
+            </div>
+            <div class="col-sm-1">
+                <h3>Price </h3>
+                @Html.ValueFor(x => x.Price)
+                @Html.TextBoxFor(x => x.Price)
+
+
+                <p>Please Enter a Price</p>
+                <p class="center">Be Honest...</p>
+
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="col-lg-4">Submit</button>
+
+}
+
+
+
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")}
+
+
